@@ -18,7 +18,7 @@ func main() {
 	}
 
 	// get image information
-	imageName := "nginx:latest"
+	imageName := "ibackchina2018/ubuntu-sshd:huge"
 	args := filters.NewArgs(filters.Arg("reference", imageName))
 	images, err := cli.ImageList(ctx, types.ImageListOptions{Filters: args})
 	if err != nil {
