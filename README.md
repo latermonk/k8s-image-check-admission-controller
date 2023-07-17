@@ -37,4 +37,17 @@ sudo install cmctl /usr/local/bin
 cmctl check api
 ```
 
+##  Install resources
+```bash
+kubectl apply -f k8s/00_namespace.yaml
+kubectl apply -f k8s/10_ca_certificate.yaml
+kubectl apply -f k8s/10_certificate.yaml
+kubectl apply -f k8s/20_deployment.yaml
+kubectl apply -f k8s/20_service.yaml
+kubectl apply -f k8s/30_validatingwebhookconfiguration.yaml
+```
 
+##  Test that pod is denied
+```bash
+kubectl apply -f k8s/90_pod-test.yaml
+```
