@@ -71,5 +71,5 @@ kubectl apply -f 02-validatingwebhookconfiguration.yaml
 
 ##  Test that pod is denied
 ```bash
-kubectl apply -f k8s/90_pod-test.yaml
+kubectl apply -f 03_pod-test.yaml
 ```
