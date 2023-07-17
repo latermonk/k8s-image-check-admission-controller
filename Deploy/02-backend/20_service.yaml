@@ -1,0 +1,11 @@
+kind: Service
+apiVersion: v1
+metadata:
+  name: image-validating-webhook
+  namespace: kube-image-admission-webhook
+spec:
+  selector:
+    app: image-validating-webhook
+  ports:
+    - port: 443
+      targetPort: 8080

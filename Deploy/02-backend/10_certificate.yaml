@@ -1,0 +1,54 @@
+kind: ClusterIssuer
+apiVersion: cert-manager.io/v1
+metadata:
+  name: ca-root
+spec:
+  ca:
+    secretName: ca-root
+---
+# Webhook certificate
+kind: Certificate
+apiVersion: cert-manager.io/v1
+metadata:
+  name: server
+  namespace: kube-image-admission-webhook
+spec:
+  issuerRef:
+    name: ca-root
+    kind: ClusterIssuer
+  secretName: server-cert
+  duration: 2160h
+  renewBefore: 360h
+  dnsNames:
+    - image-validating-webhook.kube-image-admission-webhook.svc
+  isCA: false
+  privateKey:
+    algorithm: RSA
+    size: 2048
+  usages:
+    - client auth
+    - server auth
+---
+# Admission Controller certificate
+
+kind: Certificate
+apiVersion: cert-manager.io/v1
+metadata:
+  name: client
+  namespace: kube-image-admission-webhook
+spec:
+  issuerRef:
+    name: ca-root
+    kind: ClusterIssuer
+  secretName: client-cert
+  duration: 2160h
+  renewBefore: 360h
+  dnsNames:
+    - image-admission.tayanides.com
+  isCA: false
+  privateKey:
+    algorithm: RSA
+    size: 2048
+  usages:
+    - client auth
+    - server auth
