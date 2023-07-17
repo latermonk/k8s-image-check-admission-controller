@@ -48,14 +48,20 @@ git clone https://github.com/latermonk/k8s-image-check-admission-controller.git
 cd k8s-image-check-admission-controller
 ```
 
+## Backend svc
 ```bash
-kubectl apply -f k8s/00_namespace.yaml
-kubectl apply -f k8s/10_ca_certificate.yaml
-kubectl apply -f k8s/10_certificate.yaml
-kubectl apply -f k8s/20_deployment.yaml
-kubectl apply -f k8s/20_service.yaml
-kubectl apply -f k8s/30_validatingwebhookconfiguration.yaml
+kubectl apply -f 01-backend/00_namespace.yaml
+kubectl apply -f 01-backend/10_ca_certificate.yaml
+kubectl apply -f 01-backend/10_certificate.yaml
+kubectl apply -f 01-backend/20_deployment.yaml
+kubectl apply -f 01-backend/20_service.yaml
+
 ```
+## webhook
+```shell
+kubectl apply -f 02-validatingwebhookconfiguration.yaml
+```
+
 
 ##  Test that pod is denied
 ```bash
