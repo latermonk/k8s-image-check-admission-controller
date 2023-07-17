@@ -1,0 +1,3 @@
+environment: prd
+hostname: localhost
+port: 8080
