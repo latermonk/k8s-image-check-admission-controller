@@ -8,9 +8,9 @@ cd k8s-image-check-admission-controller
 ```
 
 ```shell
-docker build . -t ibackchina2018/k8s-image-admission-controller:1
+docker build . -t ibackchina2018/k8s-image-admission-controller
 docker login
-docker push ghcr.io/thibaultserti/ubuntu-sshd:huge
+docker push ibackchina2018/k8s-image-admission-controller
 ```
 
 
