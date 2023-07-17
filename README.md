@@ -1,7 +1,23 @@
 # k8s-image-check-admission-controller
 k8s-image-check-admission-controller
 
+# BUILD
+```shell
+docker build . -t ibackchina2018/ubuntu-sshd:huge
+docker login
+docker push ghcr.io/thibaultserti/ubuntu-sshd:huge
+```
 
+
+
+
+
+
+
+
+
+
+# OLD
 ```shell
 docker  pull  nginx
 ```
