@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: image-validating-webhook
-          image: ghcr.io/thibaultserti/k8s-image-admission-controller:latest
+          image: ibackchina2018/k8s-image-admission-controller:latest
           imagePullPolicy: Always
           args:
             - "--cert=/cert/opt/tls.crt"
