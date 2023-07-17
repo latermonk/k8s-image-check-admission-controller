@@ -10,7 +10,7 @@ cd k8s-image-check-admission-controller
 ```shell
 rm -rf go.*
 go mod init k8s-image-check-admission-controller
-go mod tidy && go run main.go
+go mod tidy && go run ./cmd/k8s-image-admission-controller/main.go
 ```
 
 
