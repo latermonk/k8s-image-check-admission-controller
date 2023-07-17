@@ -3,7 +3,12 @@ k8s-image-check-admission-controller
 
 # BUILD
 ```shell
-docker build . -t ibackchina2018/ubuntu-sshd:huge
+git clone https://github.com/latermonk/k8s-image-check-admission-controller.git
+cd k8s-image-check-admission-controller
+```
+
+```shell
+docker build . -t ibackchina2018/k8s-image-admission-controller:1
 docker login
 docker push ghcr.io/thibaultserti/ubuntu-sshd:huge
 ```
@@ -25,6 +30,7 @@ docker  pull  nginx
 
 ```shell
 go mod init k8s-image-check-admission-controller
+
 go mod tidy && go run main.go
 ```
 
