@@ -122,6 +122,7 @@ func GetImageSize(imageName string) (int64, error) {
 	//sizeTotal = float32(images[0].Size) / (1024 * 1024)
 
 	sizeTotal = len(images)
+	println(sizeTotal)
 
 	return int64(sizeTotal), nil
 }
