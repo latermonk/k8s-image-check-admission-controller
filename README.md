@@ -37,7 +37,17 @@ sudo install cmctl /usr/local/bin
 cmctl check api
 ```
 
+
+
+
+
 ##  Install resources
+
+```shell
+git clone https://github.com/latermonk/k8s-image-check-admission-controller.git
+cd k8s-image-check-admission-controller
+```
+
 ```bash
 kubectl apply -f k8s/00_namespace.yaml
 kubectl apply -f k8s/10_ca_certificate.yaml
