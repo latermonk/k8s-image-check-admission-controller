@@ -16,11 +16,17 @@ go mod tidy && go build -o  abc   ./cmd/k8s-image-admission-controller/main.go
 
 ```shell
 docker build . -t ibackchina2018/k8s-image-admission-controller:latest
-docker login
-docker push ibackchina2018/k8s-image-admission-controller:latest
+
 ```
 
+```shell
+docker login
 
+```
+
+```shell
+docker push ibackchina2018/k8s-image-admission-controller:latest
+```
 ---
 # Test
 
