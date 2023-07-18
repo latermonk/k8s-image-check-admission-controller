@@ -17,7 +17,7 @@ docker:
 
 cert:
 	kubectl apply -f https://github.com/cert-manager/cert-manager/releases/download/v1.11.0/cert-manager.yaml && \
-	OS=$(go env GOOS); ARCH=$(go env GOARCH); curl -fsSL -o cmctl.tar.gz https://github.com/cert-manager/cert-manager/releases/latest/download/cmctl-$OS-$ARCH.tar.gz && \
+	curl -fsSL -o cmctl.tar.gz https://github.com/cert-manager/cert-manager/releases/latest/download/cmctl-linux-amd64.tar.gz && \
     tar xzf cmctl.tar.gz && \
     sudo install cmctl /usr/local/bin  && \
     cmctl check api
