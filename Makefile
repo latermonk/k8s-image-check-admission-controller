@@ -1,4 +1,4 @@
-.PHONY: all build docker
+.PHONY: all build docker cert test
 
 
 
