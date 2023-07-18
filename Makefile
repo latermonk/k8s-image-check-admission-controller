@@ -2,7 +2,7 @@
 
 
 
-all:  build docker
+all:  build docker cert
 
 
 build:
