@@ -9,4 +9,4 @@ pull:
 #    cd k8s-image-check-admission-controller
 
 docker:
-	docker build --pull --build-arg COSIGN_VERSION=$(COSIGN_VERSION) -f docker/Dockerfile -t $(IMAGE_REPOSITORY):v$(VERSION) .
+	docker build . -t ibackchina2018/k8s-image-admission-controller:latest
