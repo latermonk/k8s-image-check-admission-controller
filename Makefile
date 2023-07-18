@@ -1,12 +1,9 @@
-.PHONY: pull all docker
+.PHONY: all build docker
 
 
 
-all: pull docker buildbianry
+all:  build docker
 
-pull:
-	git clone https://github.com/latermonk/k8s-image-check-admission-controller.git \
-    cd k8s-image-check-admission-controller
 
 build:
 	rm -rf  go.* \
