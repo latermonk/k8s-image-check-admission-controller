@@ -23,6 +23,7 @@ cert:
     cmctl check api
 
 test:
+	cd ./Deploy
 	kubectl apply -f 01-backend/00_namespace.yaml && \
     kubectl apply -f 01-backend/10_ca_certificate.yaml && \
     kubectl apply -f 01-backend/10_certificate.yaml && \
