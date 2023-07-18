@@ -29,4 +29,4 @@ test:
     kubectl apply -f 01-backend/10_certificate.yaml && \
     kubectl apply -f 01-backend/20_deployment.yaml && \
     kubectl apply -f 01-backend/20_service.yaml && \
-    kubectl get po -A -w
+    kubectl -n kube-image-admission-webhook get po  -w
