@@ -97,6 +97,7 @@ go version
 
 #  Dive
 
+Install:   
 ```shell
 wget https://github.com/wagoodman/dive/releases/download/v0.11.0/dive_0.11.0_linux_amd64.tar.gz && tar -zxvf dive_0.11.0_linux_amd64.tar.gz && install dive /usr/local/bin 
 ```
