@@ -5,9 +5,6 @@ import (
 	"encoding/json"
 	"fmt"
 
-	"github.com/docker/docker/api/types"
-	"github.com/docker/docker/api/types/filters"
-	"github.com/docker/docker/client"
 	"github.com/regclient/regclient"
 	"github.com/regclient/regclient/types/manifest"
 	"github.com/regclient/regclient/types/platform"
@@ -74,7 +71,7 @@ func GetManifest(imageName string) (map[string]interface{}, error) {
 
 }
 
-func GetImageSize2(imageName string) (int64, error) {
+func GetImageSize(imageName string) (int64, error) {
 	sizeTotal := 0
 	manifestMap, err := GetManifest(imageName)
 	if err != nil {
@@ -97,32 +94,32 @@ func GetImageSize2(imageName string) (int64, error) {
 	return int64(sizeTotal), nil
 }
 
-func GetImageSize(imageName string) (int64, error) {
-
-	sizeTotal := 0
-
-	ctx := context.Background()
-
-	cli, err := client.NewClientWithOpts(client.WithVersion("1.41"))
-	if err != nil {
-		panic(err)
-	}
-
-	// get image information
-	imageName = "ibackchina2018/ubuntu-sshd:huge"
-	args := filters.NewArgs(filters.Arg("reference", imageName))
-	images, err := cli.ImageList(ctx, types.ImageListOptions{Filters: args})
-	if err != nil {
-		panic(err)
-	}
-
-	if len(images) != 1 {
-		panic(fmt.Errorf("Can't find image %s", imageName))
-	}
-	//sizeTotal = float32(images[0].Size) / (1024 * 1024)
-
-	sizeTotal = len(images)
-	println(sizeTotal)
-
-	return int64(sizeTotal), nil
-}
+//func GetImageSize(imageName string) (int64, error) {
+//
+//	sizeTotal := 0
+//
+//	ctx := context.Background()
+//
+//	cli, err := client.NewClientWithOpts(client.WithVersion("1.41"))
+//	if err != nil {
+//		panic(err)
+//	}
+//
+//	// get image information
+//	imageName = "ibackchina2018/ubuntu-sshd:huge"
+//	args := filters.NewArgs(filters.Arg("reference", imageName))
+//	images, err := cli.ImageList(ctx, types.ImageListOptions{Filters: args})
+//	if err != nil {
+//		panic(err)
+//	}
+//
+//	if len(images) != 1 {
+//		panic(fmt.Errorf("Can't find image %s", imageName))
+//	}
+//	//sizeTotal = float32(images[0].Size) / (1024 * 1024)
+//
+//	sizeTotal = len(images)
+//	println(sizeTotal)
+//
+//	return int64(sizeTotal), nil
+//}
